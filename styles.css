@@ -1,0 +1,197 @@
+:root {
+    interpolate-size: allow-keywords;
+    /* 👈 */
+}
+
+/* Hier staan alle fonts zodat ik deze kan gebruiken */
+@font-face {
+    font-family: "NS Sans";
+    src: url("../fonts/nssans-regular.woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "NS Sans";
+    src: url("../fonts/nssans-italic 1woff2");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "NS Sans";
+    src: url("../fonts/nssans-demi.woff2");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "NS Sans";
+    src: url("../fonts/nssans-bold.woff2");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "NS Sans";
+    src: url("../fonts/nssans-bolditalic.woff2");
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* In de root zet ik variabelen die ik kan gebruiken (kleuren voornamelijk) */
+:root {
+    --ns-main: #ffc917;
+    --ns-darkblue: #003082;
+    --ns-lightblue: #0063d3;
+    --inputbackground: #dee5fe;
+
+    --ns-white: #ffffff;
+    --ns-grey: #070721;
+    --ns-grey-10: #202037;
+    --ns-grey-20: #39394D;
+    --ns-grey-30: #515164;
+    --ns-grey-40: #6a6a7a;
+    --ns-grey-50: #838390;
+    --ns-grey-60: #9c9ca6;
+    --ns-grey-70: #b5b5bc;
+    --ns-grey-80: #cdcdd3;
+    --ns-grey-90: #e6e6e9;
+    --ns-grey-94: #f0f0f2;
+
+    --ns-red-alert: #db0029;
+    --ns-green: #009a42;
+    --ns-ovchip: #ff0098;
+    --ns-ovorange: #ff7700;
+
+    --ns-light-blue: #0079d3;
+    --ns-light-blue-2: #005ca0;
+    --ns-yellow-2: #ffb519;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: NS Sans, 'Segoe UI', Myriad, Verdana, sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: var(--ns-grey-94);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.disclaimer {
+    background-color: var(--ns-yellow-2);
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    padding: 1em;
+    width: 100vw;
+    position: sticky;
+}
+
+.disclaimer p {
+    color: var(--ns-darkblue);
+    padding: 0.3em;
+    text-align: center;
+}
+
+input:valid {
+    background-color: rgba(144, 238, 144, 0.2);
+}
+
+input.error {
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+.gegevens {
+    margin: 1em;
+    margin-top: 2em;
+    padding: .3rem 1.5rem .2rem 1.5rem;
+    border: none;
+    background-color: var(--ns-white);
+    max-width: 70vw;
+}
+
+.gegevens2 {
+    margin: 1em;
+    margin-top: 2em;
+    padding: .3rem 1.5rem .2rem 1.5rem;
+    border: none;
+    background-color: var(--ns-white);
+    max-width: 70vw;
+}
+
+.titelGegevens2 {
+    background-color: var(--ns-white);
+    color: var(--ns-darkblue);
+    padding: .4rem 1rem .4rem 1rem;
+    margin-bottom: .3em;
+    margin-left: -1em;
+    border-radius: 3px;
+    font-size: 24px;
+}
+
+footer {
+    display: none;
+}
+
+/* fieldset {
+    border: none;
+} */
+
+.titelGegevens1 {
+    background-color: var(--ns-white);
+    color: var(--ns-darkblue);
+    padding: .4rem 1.8rem .4rem 1rem;
+    margin-bottom: .3em;
+    margin-left: -1em;
+    border-radius: 3px;
+    font-size: 24px;
+}
+
+#extraVragenGetrouwd {
+    transition: height .4s ease-out, display .4s ease-out;
+    transition-behavior: allow-discrete;
+    height: auto;
+    overflow: hidden;
+
+    @starting-style {
+        height: 0;
+    }
+
+    &[hidden] {
+        transition-duration: .2s;
+        height: 0;
+    }
+}
+
+#extraVragenKinderen {
+    transition: height .4s ease-out, display .4s ease-out;
+    transition-behavior: allow-discrete;
+    height: auto;
+    overflow: hidden;
+
+    @starting-style {
+        height: 0;
+    }
+
+    &[hidden] {
+        transition-duration: .2s;
+        height: 0;
+    }
+}
+
+/* later stylen */
+
+footer {
+    display: none;
+}

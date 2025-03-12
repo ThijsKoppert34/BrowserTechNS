@@ -86,6 +86,16 @@ body {
     align-items: center;
 }
 
+fieldset {
+    border: none;
+}
+
+input {
+    border: none;
+    background-color: var(--ns-grey-94);
+    height: 1.5rem;
+}
+
 .disclaimer {
     background-color: var(--ns-yellow-2);
     position: relative;
@@ -151,14 +161,14 @@ footer {
 .titelGegevens1 {
     background-color: var(--ns-white);
     color: var(--ns-darkblue);
-    padding: .4rem 1.8rem .4rem 1rem;
+    padding: 0 1.8rem .4rem 1.4rem;
     margin-bottom: .3em;
     margin-left: -1em;
     border-radius: 3px;
     font-size: 24px;
 }
 
-#extraVragenGetrouwd {
+.uitKlapbaar {
     transition: height .4s ease-out, display .4s ease-out;
     transition-behavior: allow-discrete;
     height: auto;
@@ -174,24 +184,48 @@ footer {
     }
 }
 
-#extraVragenKinderen {
-    transition: height .4s ease-out, display .4s ease-out;
-    transition-behavior: allow-discrete;
-    height: auto;
-    overflow: hidden;
-
-    @starting-style {
-        height: 0;
-    }
-
-    &[hidden] {
-        transition-duration: .2s;
-        height: 0;
-    }
+.trein {
+    max-height: 1.29rem;
 }
+
+/* fieldset:has(.titelGegevens1) div {
+    display: flex;
+} */
 
 /* later stylen */
 
 footer {
     display: none;
+}
+
+.fieldSet1 {
+    margin: .5em 0 .5em 0;
+}
+
+fieldset>div>div,
+section div>div,
+.datumVoorwaarden {
+    display: flex;
+    gap: 1rem;
+    margin: .2rem 0 .2rem 0;
+
+}
+
+.vraagEnInput {
+    display: flex;
+    gap: 1rem;
+    margin: .5rem 0 .5rem 0;
+}
+
+.vraag {
+    display: flex;
+    flex-direction: column;
+}
+
+legend {
+    margin: .4rem 0 .4rem 0;
+}
+
+#extraVragenKopie {
+    flex-direction: column;
 }

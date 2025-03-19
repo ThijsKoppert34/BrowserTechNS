@@ -1,6 +1,5 @@
-:root {
-    interpolate-size: allow-keywords;
-    /* 👈 */
+html {
+    scroll-behavior: smooth;
 }
 
 /* Hier staan alle fonts zodat ik deze kan gebruiken */
@@ -67,6 +66,7 @@
     --ns-light-blue: #0079d3;
     --ns-light-blue-2: #005ca0;
     --ns-yellow-2: #ffb519;
+    --ns-hover-blue: #004ba0;
 }
 
 * {
@@ -97,13 +97,15 @@ input {
 }
 
 .disclaimer {
-    background-color: var(--ns-yellow-2);
+    background-color: var(--ns-main);
     position: relative;
     top: 0;
     left: 0;
     right: 0;
     align-items: center;
-    padding: 1em;
+    padding-top: 1em;
+    z-index: 9999;
+    padding-bottom: 1em;
     width: 100vw;
     position: sticky;
 }
@@ -114,8 +116,12 @@ input {
     text-align: center;
 }
 
-input:valid {
+input:user-valid {
     background-color: rgba(144, 238, 144, 0.2);
+}
+
+input:user-invalid {
+    background-color: rgba(255, 0, 0, 0.1);
 }
 
 input.error {
@@ -150,6 +156,12 @@ input.error {
     font-size: 24px;
 }
 
+form,
+legend,
+div {
+    max-width: 100vw;
+}
+
 footer {
     display: none;
 }
@@ -158,7 +170,7 @@ footer {
     border: none;
 } */
 
-.titelGegevens1 {
+.titelGegevens {
     background-color: var(--ns-white);
     color: var(--ns-darkblue);
     padding: 0 1.8rem .4rem 1.4rem;
@@ -166,6 +178,10 @@ footer {
     margin-left: -1em;
     border-radius: 3px;
     font-size: 24px;
+}
+
+:not(:has(#anders:checked)) #andersVerborgen {
+    display: none;
 }
 
 .uitKlapbaar {
@@ -178,10 +194,12 @@ footer {
         height: 0;
     }
 
-    &[hidden] {
-        transition-duration: .2s;
-        height: 0;
-    }
+
+}
+
+.uitKlapbaar[hidden] {
+    transition-duration: .2s;
+    height: 0;
 }
 
 .trein {
@@ -199,7 +217,9 @@ footer {
 }
 
 .fieldSet1 {
-    margin: .5em 0 .5em 0;
+    display: flex;
+    flex-direction: column;
+    margin: .5em 0 .8em 0;
 }
 
 fieldset>div>div,
@@ -213,7 +233,8 @@ section div>div,
 
 .vraagEnInput {
     display: flex;
-    gap: 1rem;
+    flex-direction: column;
+    gap: .5rem;
     margin: .5rem 0 .5rem 0;
 }
 
@@ -228,4 +249,84 @@ legend {
 
 #extraVragenKopie {
     flex-direction: column;
+}
+
+.twoRadios {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.oneRadio {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+a {
+    cursor: pointer;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: var(--ns-lightblue);
+    color: white;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    padding: 0.625rem 1.125rem;
+    margin-bottom: 1.5em;
+    display: block;
+    text-align: center;
+    z-index: 1;
+    width: fit-content;
+}
+
+a::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: var(--ns-hover-blue);
+    transition: 0.3s;
+    transform: translateY(100%);
+}
+
+a:hover::after {
+    transform: translateY(0);
+}
+
+a:focus-visible::after {
+    transform: translateY(0);
+}
+
+a:active::after {
+    background-color: var(--ns-darkblue);
+}
+
+/* Dit effect heb ik van Jamie overgenomen ^ */
+
+input {
+    padding: 0.625rem 0.875rem;
+}
+
+.legendOne {
+    font-size: .9rem;
+}
+
+hr {
+    width: 100vw;
+    border: solid .5px var(--ns-darkblue);
+}
+
+.verborgen1 {
+    align-items: center;
+}
+
+.trein {
+    margin-bottom: -.2rem;
+    transition: transform 0.1s linear;
+    position: relative;
+    bottom: -.3rem;
 }

@@ -1,3 +1,6 @@
+const date = new Date();
+const dateOfDeathInput = document.querySelector("#date-of-death");
+
 // extra vragen partner
 
 
@@ -47,6 +50,42 @@ inputNee1C.addEventListener("click", (event) => {
     extraVragenSectionKinderen.hidden = true;
 })
 
+const inputFields = document.querySelectorAll("input");
+
+inputFields.forEach((inputField) => {
+    if (localStorage.getItem(inputField.id)) {
+        inputField.value = localStorage.getItem(inputField.id);
+    }
+    inputField.addEventListener("input", () => {
+        localStorage.setItem(inputField.id, inputField.value);
+    });
+});
+
+dateOfDeathInput.setAttribute("max", date.toISOString().split("T")[0]);
+
+let inputAnders2A = document.querySelector("#anders");
+let andersExtra = document.querySelector("#andersVerborgen");
+
+// inputAnders2A.addEventListener("click", (event) => {
+//     andersExtra.hidden = false;
+// })
+
 extraVragenSection.hidden = true;
 extraVragenKopie.hidden = true;
 extraVragenSectionKinderen.hidden = true;
+// andersExtra.hidden = true;
+
+const trein = document.querySelector(".trein");
+
+window.addEventListener("scroll", () => {
+    let scrollY = window.scrollY;
+
+    let maxScroll = document.body.scrollHeight - window.innerHeight;
+    // dit is hoeveel je maximaal kan scrollen (hoogte body - hoogte scherm)
+
+    let maxMove = window.innerWidth;
+
+    let treinPositie = (scrollY / maxScroll) * maxMove;
+
+    trein.style.transform = `translateX(${treinPositie}px)`;
+});

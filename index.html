@@ -13,7 +13,10 @@
     <!-- progress bar van maken -->
     <section class="disclaimer">
         <p>DISCLAIMER: Dit is een school project voor de minor WDD!</p>
-        <img class="trein" src="./images/treingoed-02-02.svg" alt="spoorTrein">
+        <div>
+            <img src="./images/treintje-02.svg" alt="trein" class="trein">
+            <hr>
+        </div>
     </section>
 
 
@@ -21,109 +24,110 @@
         <fieldset class="gegevens">
 
             <fieldset class="fieldSet1">
-                <legend class="titelGegevens1">1. Gegevens van de overledene</legend>
-                <legend><b>1a.</b> Persoonlijke gegevens overledene</legend>
+                <legend class="titelGegevens">1. Gegevens van de overledene</legend>
+                <legend class="legendOne"><b>1a.</b> Persoonlijke gegevens overledene</legend>
 
                 <div class="vraagEnInput">
-                    <label for="naam">Naam:</label>
-                    <input type="text" id="naam" name="naam" required>
+                    <label for="naam">Naam</label>
+                    <input type="text" id="naam" name="naam" placeholder="bijv. Johan" required>
                 </div>
                 <div class="vraagEnInput">
-                    <label for="tussenvoegsel">Tussenvoegsel(s):</label>
-                    <input type="text" id="tussenvoegsel" name="tussenvoegsel" required>
+                    <label for="tussenvoegsel">Tussenvoegsel(s)</label>
+                    <input type="text" id="tussenvoegsel" name="tussenvoegsel" placeholder="bijv. van der" required>
                 </div>
                 <div class="vraagEnInput">
-                    <label for="tussenvoegsel">Achternaam:</label>
-                    <input type="text" id="achternaam" name="achternaam" required>
+                    <label for="tussenvoegsel">Achternaam</label>
+                    <input type="text" id="achternaam" name="achternaam" placeholder="bijv. Meijde" required>
                 </div>
                 <div class="vraagEnInput">
-                    <label for="bsn-nummer">Burgerservicenummer overledene:</label>
-                    <input type="number" name="bsn" id="bsn-nummer" min="100000000" max="999999999" required>
+                    <label for="bsn-nummer">Burgerservicenummer overledene</label>
+                    <input type="text" inputmode="numeric" maxlength="9" pattern="\d{9,9}" name="bsn" id="bsn-nummer"
+                        placeholder="987654321" required>
                 </div>
                 <div class="vraagEnInput">
-                    <label for="overlijdensdatum">Overlijdensdatum:</label>
-                    <input type="number" id="day" name="day" min="1" max="31" maxlength="2" placeholder="DD" required>
-                    <span>-</span>
-                    <input type="number" id="month" name="month" min="1" max="12" maxlength="2" placeholder="MM"
-                        required>
-                    <span>-</span>
-                    <input type="number" id="year" name="year" min="2024" max="2025" maxlength="4" placeholder="JAAR"
-                        required>
+                    <label for="date-of-death">
+                        Overlijdensdatum
+                    </label>
+                    <input required type="date" name="date-of-death" id="date-of-death" max="2025-03-11" />
                 </div>
             </fieldset>
 
-            <fieldset class="fieldSet2">
+            <fieldset class="fieldSet2 ">
                 <div class="vraag">
-                    <legend><b>1b.</b> Was de overledene getrouwd of had de overledene een
+                    <legend class="legendOne"><b>1b.</b> Was de overledene getrouwd of had de overledene een
                         geregistreerd partner op het moment van overlijden?</legend>
-                    <div class="radiolable">
-                        <input type="radio" id="getrouwd-nee" name="janee" value="nee">
-                        <label for="getrouwd-nee"> Nee</label><br>
-                    </div>
-                    <div>
-                        <input type="radio" id="getrouwd-ja" name="janee" value="ja">
-                        <label for="getrouwd-ja">Ja</label>
-                    </div>
-                </div>
 
-                <section id="extraVragenGetrouwd" class="uitKlapbaar">
+                    <div class="twoRadios">
+                        <div class="oneRadio">
+                            <input type="radio" id="getrouwd-nee" name="janee" value="nee">
+                            <label for="getrouwd-nee"> Nee</label>
+                        </div>
+                        <div class="oneRadio">
+                            <input type="radio" id="getrouwd-ja" name="janee" value="ja">
+                            <label for="getrouwd-ja">Ja</label>
+                        </div>
+                    </div>
 
-                    <div>
-                        <legend>Hadden de overledene en diens echtgenoot of
-                            geregistreerd partner huwelijkse of partner schaps-
-                            voorwaarden laten vastleggen in een notariële akte?</legend>
+
+                    <section id="extraVragenGetrouwd" class="uitKlapbaar">
 
                         <div>
-                            <input type="radio" id="voorwaarden-nee" name="janee1" value="nee">
-                            <label for="voorwaarden-nee"> Nee</label><br>
-                        </div>
-                        <div>
-                            <input type="radio" id="voorwaarden-ja" name="janee1" value="ja">
-                            <label for="voorwaarden-ja">Ja</label>
-                        </div>
-                        <div id="extraVragenKopie" class="uitKlapbaar">
-                            <legend>Stuur een kopie van de akte mee met de aangifte</legend>
-                            <label for="mijnBestand">Selecteer een bestand</label>
-                            <input type="file" id="mijnBestand" name="mijnBestand" class="selecteerBestand">
-                            <input type="submit" class="stuurkopie">
-                        </div>
-                    </div>
-                    <div>
-                        <legend>Hadden de overledene en diens partner een finaal
-                            verrekenbeding?</legend>
-                        <div>
-                            <input type="radio" id="finaal-nee" name="janee2" value="nee">
-                            <label for="finaal-nee"> Nee</label><br>
-                        </div>
+                            <legend>Hadden de overledene en diens echtgenoot of
+                                geregistreerd partner huwelijkse of partner schaps-
+                                voorwaarden laten vastleggen in een notariële akte?</legend>
 
-                        <div>
-                            <input type="radio" id="finaal-ja" name="janee2" value="ja">
-                            <label for="finaal-ja">Ja</label>
+                            <div class="twoRadios">
+                                <div class="oneRadio">
+                                    <input type="radio" id="voorwaarden-nee" name="janee1" value="nee">
+                                    <label for="voorwaarden-nee"> Nee</label>
+                                </div>
+                                <div class="oneRadio">
+                                    <input type="radio" id="voorwaarden-ja" name="janee1" value="ja">
+                                    <label for="voorwaarden-ja">Ja</label>
+                                </div>
+                            </div>
+                            <div id="extraVragenKopie" class="uitKlapbaar">
+                                <legend>Stuur een kopie van de akte mee met de aangifte</legend>
+                                <label for="mijnBestand">Selecteer een bestand</label>
+                                <input type="file" id="mijnBestand" name="mijnBestand" class="selecteerBestand">
+                            </div>
                         </div>
-                    </div>
-                    <div class="datumVoorwaarden">
-                        <label for="overlijdensdatum">Datum huwelijkse of partnerschapsvoorwaarden</label>
-                        <input type="number" id="day1" name="day" min="1" max="31" maxlength="2" placeholder="DD"
-                            required>
-                        <span>-</span>
-                        <input type="number" id="month1" name="month" min="1" max="12" maxlength="2" placeholder="MM"
-                            required>
-                        <span>-</span>
-                        <input type="number" id="year1" name="year" max="2025" maxlength="4" placeholder="JAAR"
-                            required>
-                    </div>
+                        <div>
+                            <legend>Hadden de overledene en diens partner een finaal
+                                verrekenbeding?</legend>
+                            <div class="twoRadios">
+                                <div>
+                                    <input type="radio" id="finaal-nee" name="janee2" value="nee">
+                                    <label for="finaal-nee"> Nee</label>
+                                </div>
+
+                                <div>
+                                    <input type="radio" id="finaal-ja" name="janee2" value="ja">
+                                    <label for="finaal-ja">Ja</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="vraagEnInput">
+                            <label for="date-of-death">
+                                Overlijdensdatum
+                            </label>
+                            <input required type="date" name="date-of-death" id="date-of-death" max="2025-03-11" />
+                        </div>
             </fieldset>
             </section>
             <fieldset class="fieldSet3">
                 <div class="vraag">
-                    <legend><b>1c.</b> Had de overledene kinderen?</legend>
-                    <div>
-                        <input type="radio" id="kinderen-nee" name="janee3" value="nee">
-                        <label for="kinderen-nee"> Nee</label><br>
-                    </div>
-                    <div>
-                        <input type="radio" id="kinderen-ja" name="janee3" value="ja">
-                        <label for="kinderen-ja">Ja</label><br>
+                    <legend class="legendOne"><b>1c.</b> Had de overledene kinderen?</legend>
+
+                    <div class="twoRadios">
+                        <div class="oneRadio">
+                            <input type="radio" id="kinderen-nee" name="janee3" value="nee">
+                            <label for="kinderen-nee"> Nee</label>
+                        </div>
+                        <div class="oneRadio">
+                            <input type="radio" id="kinderen-ja" name="janee3" value="ja">
+                            <label for="kinderen-ja">Ja</label>
+                        </div>
                     </div>
                 </div>
 
@@ -156,16 +160,109 @@
                     </div>
                 </section>
             </fieldset>
+            <a href="#button1">Volgende</a>
 
         </fieldset>
 
-        <fieldset class="gegevens2">
-            <legend class="titelGegevens2">2. Gegevens verkrijger</legend>
-            <legend>1a. Persoonlijke gegevens overledene</legend>
+        <fieldset class="gegevens2" id="button1">
+
+            <fieldset class="fieldSet1.1">
+                <legend class="titelGegevens">2. Gegevens van de verkrijger</legend>
+                <legend class="legendOne"><b>2a.</b> Persoonlijke gegevens verkrijger</legend>
+
+                <div class="vraagEnInput">
+                    <label for="naam">Naam</label>
+                    <input type="text" id="naam" name="naam" placeholder="bijv. Johan" required>
+                </div>
+                <div class="vraagEnInput">
+                    <label for="tussenvoegsel">Tussenvoegsel(s)</label>
+                    <input type="text" id="tussenvoegsel" name="tussenvoegsel" placeholder="bijv. van der" required>
+                </div>
+                <div class="vraagEnInput">
+                    <label for="tussenvoegsel">Achternaam</label>
+                    <input type="text" id="achternaam" name="achternaam" placeholder="bijv. Meijde" required>
+                </div>
+                <div class="vraagEnInput">
+                    <label for="bsn-nummer">Burgerservicenummer verkrijger</label>
+                    <input type="text" inputmode="numeric" maxlength="9" pattern="\d{9,9}" name="bsn" id="bsn-nummer"
+                        placeholder="987654321" required>
+                </div>
+                <div class="vraagEnInput">
+                    <legend>Relatie met overledene</legend>
+                    <div>
+                        <input type="radio" id="broerZus" name="relatie" value="broerZus">
+                        <label for="broerZus">Broer/Zus</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="vaderMoeder" name="relatie" value="vaderMoeder">
+                        <label for="vaderMoeder">Vader/Moeder</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="neefNicht" name="relatie" value="neefNicht">
+                        <label for="neefNicht">Neef/Nicht</label>
+                    </div>
+                    <div class="verborgen1">
+                        <input type="radio" id="anders" name="relatie" value="anders">
+                        <label for="anders">Anders</label>
+                        <input type="text" class="uitKlapbaar" id="andersVerborgen" name="anders"
+                            placeholder="bijv. goede vriend">
+                    </div>
+                </div>
+            </fieldset>
+            <a href="#button2">Volgende</a>
+        </fieldset>
+
+        <fieldset class="gegevens2" id="button2">
+
+            <fieldset class="fieldSet1.1">
+                <legend class="titelGegevens">3. Financiele plaatje</legend>
+                <legend class="legendOne"><b>3a.</b> Totale vermogen overledene</legend>
+
+                <div class="vermogenOverledene">
+                    <label for="geld-input">Vul bedrag in</label>
+                    <input type="text" name="geld-input" id="geld-input" pattern="^\€\d{1,3}(,\d{3})*(\.\d+)?€" value=""
+                        data-type="currency" placeholder="bijv. €100.000">
+                </div>
+                <div class="vraagEnInput">
+                    <label for="tussenvoegsel">Tussenvoegsel(s)</label>
+                    <input type="text" id="tussenvoegsel" name="tussenvoegsel" placeholder="bijv. van der" required>
+                </div>
+                <div class="vraagEnInput">
+                    <label for="tussenvoegsel">Achternaam</label>
+                    <input type="text" id="achternaam" name="achternaam" placeholder="bijv. Meijde" required>
+                </div>
+                <div class="vraagEnInput">
+                    <label for="bsn-nummer">Burgerservicenummer verkrijger</label>
+                    <input type="text" inputmode="numeric" maxlength="9" pattern="\d{9,9}" name="bsn" id="bsn-nummer"
+                        placeholder="987654321" required>
+                </div>
+                <div class="vraagEnInput">
+                    <legend>Relatie met overledene</legend>
+                    <div>
+                        <input type="radio" id="broerZus" name="relatie" value="broerZus">
+                        <label for="broerZus">Broer/Zus</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="vaderMoeder" name="relatie" value="vaderMoeder">
+                        <label for="vaderMoeder">Vader/Moeder</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="neefNicht" name="relatie" value="neefNicht">
+                        <label for="neefNicht">Neef/Nicht</label>
+                    </div>
+                    <div class="verborgen1">
+                        <input type="radio" id="anders" name="relatie" value="anders">
+                        <label for="anders">Anders</label>
+                        <input type="text" class="uitKlapbaar" id="andersVerborgen" name="anders"
+                            placeholder="bijv. goede vriend">
+                    </div>
+                </div>
+            </fieldset>
+            <a href="#button3">Volgende</a>
+        </fieldset>
 
 
-            <label for="naam">Naam:</label>
-            <input type="text" id="naam" name="naam" required>
+
     </form>
 
     <footer>

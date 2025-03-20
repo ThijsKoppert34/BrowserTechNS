@@ -10,7 +10,6 @@
 
 <body>
 
-    <!-- progress bar van maken -->
     <section class="disclaimer">
         <p>DISCLAIMER: Dit is een school project voor de minor WDD!</p>
         <div>
@@ -19,9 +18,9 @@
         </div>
     </section>
 
-
     <form>
-        <fieldset class="gegevens">
+
+        <fieldset class="gegevensField">
 
             <fieldset class="fieldSet1">
                 <legend class="titelGegevens">1. Gegevens van de overledene</legend>
@@ -37,7 +36,8 @@
                 </div>
                 <div class="vraagEnInput">
                     <label for="tussenvoegsel">Achternaam</label>
-                    <input type="text" id="achternaam" name="achternaam" placeholder="bijv. Meijde" required>
+                    <input type="text" id="achternaam" name="achternaam" pattern="^[a-zA-Z]+$"
+                        placeholder="bijv. Meijde" required>
                 </div>
                 <div class="vraagEnInput">
                     <label for="bsn-nummer">Burgerservicenummer overledene</label>
@@ -48,7 +48,7 @@
                     <label for="date-of-death">
                         Overlijdensdatum
                     </label>
-                    <input required type="date" name="date-of-death" id="date-of-death" max="2025-03-11" />
+                    <input required type="date" name="date-of-death" id="date-of-death" />
                 </div>
             </fieldset>
 
@@ -72,7 +72,7 @@
                     <section id="extraVragenGetrouwd" class="uitKlapbaar">
 
                         <div>
-                            <legend>Hadden de overledene en diens echtgenoot of
+                            <legend><b>1b-a. </b>Hadden de overledene en diens echtgenoot of
                                 geregistreerd partner huwelijkse of partner schaps-
                                 voorwaarden laten vastleggen in een notariële akte?</legend>
 
@@ -93,7 +93,7 @@
                             </div>
                         </div>
                         <div>
-                            <legend>Hadden de overledene en diens partner een finaal
+                            <legend><b>1b-b. </b>Hadden de overledene en diens partner een finaal
                                 verrekenbeding?</legend>
                             <div class="twoRadios">
                                 <div>
@@ -107,17 +107,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="vraagEnInput">
-                            <label for="date-of-death">
-                                Overlijdensdatum
-                            </label>
-                            <input required type="date" name="date-of-death" id="date-of-death" max="2025-03-11" />
-                        </div>
             </fieldset>
             </section>
             <fieldset class="fieldSet3">
                 <div class="vraag">
-                    <legend class="legendOne"><b>1c.</b> Had de overledene kinderen?</legend>
+                    <legend class="legendOne"><b>1c. </b> Had de overledene kinderen?</legend>
 
                     <div class="twoRadios">
                         <div class="oneRadio">
@@ -164,27 +158,27 @@
 
         </fieldset>
 
-        <fieldset class="gegevens2" id="button1">
+        <fieldset class="gegevensField" id="button1">
 
-            <fieldset class="fieldSet1.1">
+            <fieldset class="fieldSet11">
                 <legend class="titelGegevens">2. Gegevens van de verkrijger</legend>
                 <legend class="legendOne"><b>2a.</b> Persoonlijke gegevens verkrijger</legend>
 
                 <div class="vraagEnInput">
-                    <label for="naam">Naam</label>
-                    <input type="text" id="naam" name="naam" placeholder="bijv. Johan" required>
+                    <label for="naam1">Naam</label>
+                    <input type="text" id="naam1" name="naam1" placeholder="bijv. Johan" required>
                 </div>
                 <div class="vraagEnInput">
-                    <label for="tussenvoegsel">Tussenvoegsel(s)</label>
-                    <input type="text" id="tussenvoegsel" name="tussenvoegsel" placeholder="bijv. van der" required>
+                    <label for="tussenvoegsel1">Tussenvoegsel(s)</label>
+                    <input type="text" id="tussenvoegsel1" name="tussenvoegsel1" placeholder="bijv. van der" required>
                 </div>
                 <div class="vraagEnInput">
-                    <label for="tussenvoegsel">Achternaam</label>
-                    <input type="text" id="achternaam" name="achternaam" placeholder="bijv. Meijde" required>
+                    <label for="achternaam1">Achternaam</label>
+                    <input type="text" id="achternaam1" name="achternaam1" placeholder="bijv. Meijde" required>
                 </div>
                 <div class="vraagEnInput">
-                    <label for="bsn-nummer">Burgerservicenummer verkrijger</label>
-                    <input type="text" inputmode="numeric" maxlength="9" pattern="\d{9,9}" name="bsn" id="bsn-nummer"
+                    <label for="bsn-nummer1">Burgerservicenummer verkrijger</label>
+                    <input type="text" inputmode="numeric" maxlength="9" pattern="\d{9,9}" name="bsn" id="bsn-nummer1"
                         placeholder="987654321" required>
                 </div>
                 <div class="vraagEnInput">
@@ -210,53 +204,68 @@
                 </div>
             </fieldset>
             <a href="#button2">Volgende</a>
+            <!-- anchor points, zonder css kun je de button ergens heen laten gaan -->
+
         </fieldset>
 
-        <fieldset class="gegevens2" id="button2">
+        <fieldset class="gegevensField" id="button2">
 
-            <fieldset class="fieldSet1.1">
+            <fieldset class="fieldSet11">
                 <legend class="titelGegevens">3. Financiele plaatje</legend>
-                <legend class="legendOne"><b>3a.</b> Totale vermogen overledene</legend>
+                <legend class="legendOne"><b>3a.</b> Waarde van huis</legend>
+                <div class="vraagEnInput">
+                    <legend>Vul bedrag in</legend>
+                    <div class="euroEnInput">
+                        <span class="currency-symbol">€</span>
+                        <input type="text" name="geld-input" id="geld-input1" value="" data-type="currency"
+                            placeholder="bijv. €100.000">
+                    </div>
+                </div>
+                <legend class="legendOne"><b>3b.</b> Bedrag op de bank</legend>
+                <div class="vraagEnInput">
+                    <legend>Vul bedrag in</legend>
+                    <div class="euroEnInput">
+                        <span class="currency-symbol">€</span>
+                        <input type="text" name="geld-input" id="geld-input2" value="" data-type="currency"
+                            placeholder="bijv. €100.000">
+                    </div>
+                </div>
+                <p>Totaal € <strong><span id="resultaat"></span></strong></p>
 
-                <div class="vermogenOverledene">
-                    <label for="geld-input">Vul bedrag in</label>
-                    <input type="text" name="geld-input" id="geld-input" pattern="^\€\d{1,3}(,\d{3})*(\.\d+)?€" value=""
-                        data-type="currency" placeholder="bijv. €100.000">
-                </div>
                 <div class="vraagEnInput">
-                    <label for="tussenvoegsel">Tussenvoegsel(s)</label>
-                    <input type="text" id="tussenvoegsel" name="tussenvoegsel" placeholder="bijv. van der" required>
-                </div>
-                <div class="vraagEnInput">
-                    <label for="tussenvoegsel">Achternaam</label>
-                    <input type="text" id="achternaam" name="achternaam" placeholder="bijv. Meijde" required>
-                </div>
-                <div class="vraagEnInput">
-                    <label for="bsn-nummer">Burgerservicenummer verkrijger</label>
-                    <input type="text" inputmode="numeric" maxlength="9" pattern="\d{9,9}" name="bsn" id="bsn-nummer"
-                        placeholder="987654321" required>
-                </div>
-                <div class="vraagEnInput">
-                    <legend>Relatie met overledene</legend>
+                    <legend class="legendOne"><b>3c.</b> Selecteer het aantal verkrijgers</legend>
                     <div>
-                        <input type="radio" id="broerZus" name="relatie" value="broerZus">
-                        <label for="broerZus">Broer/Zus</label>
+                        <label>
+                            <input checked type="radio" id="aantalVerkrijgers1" name="verkrijger" value="1">
+                            1
+                        </label>
                     </div>
                     <div>
-                        <input type="radio" id="vaderMoeder" name="relatie" value="vaderMoeder">
-                        <label for="vaderMoeder">Vader/Moeder</label>
+                        <label>
+                            <input type="radio" id="aantalVerkrijgers2" name="verkrijger" value="2">
+                            2
+                        </label>
                     </div>
                     <div>
-                        <input type="radio" id="neefNicht" name="relatie" value="neefNicht">
-                        <label for="neefNicht">Neef/Nicht</label>
+                        <label>
+                            <input type="radio" id="aantalVerkrijgers3" name="verkrijger" value="3">
+                            3
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="radio" id="aantalVerkrijgers4" name="verkrijger" value="4">
+                            4
+                        </label>
                     </div>
                     <div class="verborgen1">
-                        <input type="radio" id="anders" name="relatie" value="anders">
-                        <label for="anders">Anders</label>
-                        <input type="text" class="uitKlapbaar" id="andersVerborgen" name="anders"
-                            placeholder="bijv. goede vriend">
+                        <input type="radio" id="andersVerkrijger" name="verkrijger" value="">
+                        <label for="andersVerkrijger">Anders</label>
+                        <input type="text" class="uitKlapbaar" id="andersVerkrijger1" name="anders"
+                            placeholder="bijv. 5">
                     </div>
                 </div>
+                <p>Totaal bedrag per verkrijger € <strong><span id="resultaat1"></strong></span></p>
             </fieldset>
             <a href="#button3">Volgende</a>
         </fieldset>
@@ -266,7 +275,8 @@
     </form>
 
     <footer>
-        <img src="./images/treinspoor-02.svg" alt="">
+        <img src="" alt="">
+        <p>Bedankt voor het invullen van het belastingformulier!</p>
     </footer>
     <script src="script.js"></script>
 </body>
